@@ -9,7 +9,9 @@ typedef struct {
 } STUDENT;
 
 int main() {
-    int numStudents = 1;
+    int numStudents ;
+    printf("Enter number of students: ");
+    scanf("%d", &numStudents);
     int x;
 
     STUDENT* students = malloc(numStudents * sizeof(STUDENT));
@@ -35,7 +37,15 @@ int main() {
         printf("Enter roll number: ");
         scanf("%d", &students[x].rollNumber);
 
-        printf("Student details: %s %s %d\n", students[x].firstName, students[x].lastName, students[x].rollNumber);
+       
+    }
+
+    // Print student details
+    for (x = 0; x < numStudents; x++) {
+        printf("Student %d\n", x + 1);
+        printf("First name: %s\n", students[x].firstName);
+        printf("Last name: %s\n", students[x].lastName);
+        printf("Roll number: %d\n", students[x].rollNumber);
     }
 
     // Free allocated memory
