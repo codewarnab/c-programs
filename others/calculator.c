@@ -58,7 +58,7 @@ void substraction()
       printf(" how many numbers you want to substraction ?");
       
       scanf(" %d",&n);
-      printf("(Dont forget to add sign)")
+      printf("(Dont forget to add sign)");
       sub1=input(n,inputarr);
     
    for (int i = 0 ; i < n ;i++ )
