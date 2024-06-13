@@ -21,7 +21,7 @@ void printInitials(char name[])
     {
         if (name[i] == ' ' && name[i + 1] != ' ' && name[i + 1] != '\0')
         {
-            printf(" %c", toupper(name[i + 1])); // Add a space before printing the initial
+            printf(" %c", toupper(name[i + 1]));
         }
     }
     printf("\n");
