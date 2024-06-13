@@ -1,3 +1,4 @@
 # Ignore executables
 *.exe
 .vscode
+test.c
