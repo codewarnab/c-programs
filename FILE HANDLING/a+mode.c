@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     while (!feof(fp))
     {
         ch = fgetc(fp);
+        // The file pointer advances after each character is read.
         printf("%c", ch);
 
         /* code here */
