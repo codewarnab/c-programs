@@ -8,7 +8,7 @@ int  main ()
    gets(str); int len = strlen(str);
    ps = str ;
 //  for (int i =0;i<len ; i++)
- for (;*ps!='\0';)
+ while(*ps!='\0')
 
  {
     if (*ps >= 'a' && *ps <='z')
