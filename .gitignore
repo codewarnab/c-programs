@@ -2,4 +2,4 @@
 *.exe
 .vscode
 test.c
-FILE HANDLING/strinoutput.txt
+*.txt
