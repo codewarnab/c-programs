@@ -31,7 +31,7 @@ while(1){
  insertbeg();
  break;
  case 5 :
-// insertatend();
+insertatend();
  break;
 	default:
 	printf("invalid choice !\n");

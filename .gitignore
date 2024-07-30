@@ -4,3 +4,6 @@
 test.c
 *.txt
 FILE HANDLING/strinoutput.txt
+multithreaded_proxy_web_server/proxy_parse.c
+multithreaded_proxy_web_server/proxy_parse.h
+multithreaded_proxy_web_server/proxy_server_with_cache.c
