@@ -26,56 +26,56 @@ printf("\n----------------------------------------------\n");
             }  
             case 2:  
             {  
-                pop();  
-                break;  
-            }  
-            case 3:  
-            {  
-                show();  
-                break;  
-            }  
-            case 4:   
-            {  
-                printf("Exiting....");  
-                break;   
-            }  
-            default:  
-            {  
-                printf("Please Enter valid choice ");  
-            }   
-        };  
-    }  
-}   
-  
-void push ()  
-{  
-    int val;      
-    if (top == n )   
-    printf("\n Overflow");   
-    else   
-    {  
-        printf("Enter the value?");  
-        scanf("%d",&val);         
-        top = top +1;   
-        stack[top] = val;   
+                    pop();  
+                    break;  
+                }  
+                case 3:  
+                {  
+                    show();  
+                    break;  
+                }  
+                case 4:   
+                {  
+                    printf("Exiting....");  
+                    break;   
+                }  
+                default:  
+                {  
+                    printf("Please Enter valid choice ");  
+                }   
+            };  
+        }  
     }   
-}   
-  
-void pop ()   
-{   
-    if(top == -1)   
-    printf("Underflow");  
-    else  
-    top = top -1;   
-}   
-void show()  
-{  
-    for (i=top;i>=0;i--)  
+    
+    void push ()  
     {  
-        printf("%d\n",stack[i]);  
-    }  
-    if(top == -1)   
+        int val;      
+        if (top == n )   
+        printf("\n Overflow");   
+        else   
+        {  
+            printf("Enter the value?");  
+            scanf("%d",&val);         
+            top = top +1;   
+            stack[top] = val;   
+        }   
+    }   
+    
+    void pop ()   
+    {   
+        if(top == -1)   
+        printf("Underflow");  
+        else  
+        top = top -1;   
+    }   
+    void show()  
     {  
-        printf("Stack is empty");  
+        for (i=top;i>=0;i--)  
+        {  
+            printf("%d\n",stack[i]);  
+        }  
+        if(top == -1)   
+        {  
+            printf("Stack is empty");  
+        }  
     }  
-}  

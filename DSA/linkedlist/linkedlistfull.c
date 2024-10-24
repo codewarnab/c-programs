@@ -15,6 +15,7 @@ void printnode();
 void deletebeg();
 void deleteend();
 int getlenth();
+void insertBefore();
 
 int main()
 {
@@ -61,12 +62,53 @@ int main()
             else
                 deleteend();
             break;
+        case 9:
+             if (head == NULL)
+                printf("list is empty ");
+             else
+                insertBefore();
+                break;
         default:
             printf("invalid choice !\n");
             break;
         }
     }
 }
+
+
+
+// Function to insert a node before a specific position
+void insertBefore() {
+    int pos, i = 1;
+    printf("Enter the position before which you want to insert node:\n");
+    scanf("%d", &pos);
+    
+    if (pos == 1) {
+        insertbeg(); // If the position is 1, insert at the beginning
+        return;
+    }
+
+    int l = getlenth();
+    if (pos > l + 1 || pos < 1) {
+        printf("Invalid position!\n");
+        return;
+    }
+
+    nd *temp = head;
+    nd *newnode = (struct node *)malloc(sizeof(struct node *));
+    printf("Enter data: ");
+    scanf("%d", &newnode->data);
+
+    // Traverse to the node just before the position
+    while (i < pos - 1) {
+        temp = temp->next;
+        i++;
+    }
+
+    newnode->next = temp->next;
+    temp->next = newnode;
+}
+
 
 //   Funtiuon for deleting the frist  node
 void deletebeg()
