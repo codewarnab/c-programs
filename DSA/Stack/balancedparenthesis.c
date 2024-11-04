@@ -34,6 +34,10 @@ int isMathhingPair(char left , char right ){
     }
 
 }
+// Traverse the expression; push any opening brackets onto the stack.
+// For each closing bracket, check if it matches the top stack element.
+// If there's no match or stack is empty, return 0 (not balanced).
+// At the end, return 1 if stack is empty (balanced), else 0.
 
 int areParenthesisBalanced(char exp[]){
     int i;
