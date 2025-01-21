@@ -104,9 +104,12 @@ int main()
     int i = 0, j = 0;
     while (i < nz1 && j < nz2)
     {
+
         if (rowIndices1[i] < rowIndices2[j] || (rowIndices1[i] == rowIndices2[j] && columnIndices1[i] < columnIndices2[j]))
         {
-            // Copy element from the first matrix
+             // If the current element of the first matrix comes before the current element of the second matrix (by row and column order),
+            // copy the element from the first matrix to the result.
+
             resultRowIndices[k3] = rowIndices1[i];
             resultColumnIndices[k3] = columnIndices1[i];
             resultValues[k3] = values1[i];
@@ -114,7 +117,8 @@ int main()
         }
         else if (rowIndices1[i] > rowIndices2[j] || (rowIndices1[i] == rowIndices2[j] && columnIndices1[i] > columnIndices2[j]))
         {
-            // Copy element from the second matrix
+            // If the current element of the second matrix comes before the current element of the first matrix (by row and column order),
+            // copy the element from the second matrix to the result.
             resultRowIndices[k3] = rowIndices2[j];
             resultColumnIndices[k3] = columnIndices2[j];
             resultValues[k3] = values2[j];
