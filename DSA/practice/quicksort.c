@@ -1,50 +1,54 @@
 #include <stdio.h>
 
-void swap(int * a , int *b){
+void swap(int *a, int *b)
+{
     int temp = *a;
     *a = *b;
-    *b = temp; 
+    *b = temp;
 }
 
-// partition function to place the pivot element at its correct position 
-int partition(int arr[],int low, int high){
-    int pivot = arr[high]; // pivot element
-    int i = low - 1; // index for smaller element
+int partition(int arr[], int low, int high)
+{
+    int pivot = arr[high];
+    int i = low - 1; // index for smaller element than pivot
 
     for (int j = low; j < high; j++)
     {
-        if(arr[j]<pivot)
+        if (arr[j] < pivot)
         {
             i++;
-            swap(&arr[i], &arr[j]);
+            swap(arr[j], arr[i]);
         }
     }
 
-    swap(&arr[i + 1], &arr[high]); // place pivot in correct position
+    swap(&arr[i + 1], &arr[high]); // Swap pivot(arr high is the pivot element here ) into its final sorted position (all left elements < pivot and right elements ≥ pivot)
 
-    return i + 1;
+    return i;
 }
 
+// partition function to place the pivot element at its correct position
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        int pi = partition(arr, low, high);
 
-void quickSort(int arr[],int low , int high){
-    if(low < high){
-        int pi = partition(arr, low, high); // partion index 
-
-        /// recursively sort elements before and after partition
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+        quickSort(arr, low, pi - 1);  // sort left subarray (elements less than pivot)
+        quickSort(arr, pi + 1, high); // sort right subarray (elements greater than pivot)
     }
 }
 
-void printArray(int arr[],int n ){
-    for (int i = 0; i < n; i++){
+void printArray(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
         printf("%d", arr[i]);
-
     }
     printf("\n");
 }
 
-int main(){
+int main()
+{
     int arr[] = {10, 80, 30, 90, 40, 50, 70};
     int n = sizeof(arr) / sizeof(arr[0]);
 
@@ -56,5 +60,5 @@ int main(){
     printf("Sorted Array: ");
     printArray(arr, n);
 
-    return 0; 
+    return 0;
 }
